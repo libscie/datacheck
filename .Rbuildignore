@@ -1,1 +1,7 @@
 ^LICENSE\.md$
+^datacheck\.Rproj$
+^\.Rproj\.user$
+^README\.Rmd$
+^cran-comments\.md$
+^codecov\.yml$
+^\.github$
