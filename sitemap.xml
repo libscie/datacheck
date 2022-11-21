@@ -18,4 +18,13 @@
   <url>
     <loc>/reference/index.html</loc>
   </url>
+  <url>
+    <loc>/reference/readCsv.html</loc>
+  </url>
+  <url>
+    <loc>/reference/readDir.html</loc>
+  </url>
+  <url>
+    <loc>/reference/readExcel.html</loc>
+  </url>
 </urlset>
