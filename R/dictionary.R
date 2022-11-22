@@ -28,7 +28,7 @@ latitudeLongitude <- function () {
 }
 
 gender <- function () {
-  return("^(transgender|two-spirit|non[-\\s]?binary|cisgender|gender[-\\s]?fluid|trans)$")
+  return("^(transgender|two-spirit|non[-\\s]?binary|cisgender|gender[-\\s]?fluid|trans.*)$")
 }
 
 ssn <- function () {

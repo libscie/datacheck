@@ -88,7 +88,12 @@ datacheckFile <- function(path) {
 datacheckFolder <- function(path) {
   matchedFiles <- list.files(path, pattern = "*.csv|*.xlsx", recursive = TRUE)
   for (i in 1:length(matchedFiles)) {
-    iterPath <- sprintf('%s%s', path, matchedFiles[i])
+    iterPath <- sprintf('%s%s', ifelse(
+        endsWith(x = path, '/'),
+        path,
+        paste0(path, '/')
+      ),
+      matchedFiles[i])
     if (i == 1) {
       res <- datacheckFile(iterPath)
     } else {
