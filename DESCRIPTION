@@ -3,7 +3,8 @@ Title: Check Data For Potential Privacy Violations
 Version: 0.0.0.9000
 Authors@R: c(
         person("Chris", "Hartgerink", ,"chris@libscie.org", role = c("aut", "cre"), comment = c(ORCID = "0000-0003-1050-6809")),
-        person("Richard", "Klein", ,"raklein22@gmail.com", role = c("aut"), comment = c(ORCID = "0000-0002-8713-1972"))
+        person("Richard", "Klein", ,"raklein22@gmail.com", role = c("aut"), comment = c(ORCID = "0000-0002-8713-1972")),
+        person("Jelte", "Wicherts", ,"J.M.Wicherts@tilburguniversity.edu", role = c("aut"), comment = c(ORCID = "0000-0003-2415-2933"))
     )
 Description: The datacheck package scans datasets for potential privacy violations according to data protection laws (e.g., GDPR, HIPAA). This is a tool to help screen datasets that researchers may want to openly share online. It can also be used as a research tool to scan datasets for potential privacy violations. The data is not sent to  any remote server for this screening, it happens 100% with the package and on the person's device.
 License: MIT + file LICENSE
