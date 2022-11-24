@@ -58,20 +58,20 @@ datacheckFile <- function(path) {
 
   return(
     data.frame(file = path,
-      email = checker(path, email()),
-      ipv4 = checker(path, ip(version = 4)),
-      ipv6 = checker(path, ip(version = 6)),
-      macAddress = checker(path, macAddress()),
-      browserUA = checker(path, browserUA()),
-      phoneNr = checker(path, phoneNr()),
-      latitudeLongitude = checker(path, latitudeLongitude()),
-      gender = checker(path, gender()),
-      ssn = checker(path, ssn()),
-      birthday = checker(path, birthday()),
-      bloodType = checker(path, bloodType()),
-      iban = checker(path, iban()),
-      creditcard = checker(path, creditcard()),
-      mturk = checker(path, mturk())
+      email = checker(dat, email()),
+      ipv4 = checker(dat, ip(version = 4)),
+      ipv6 = checker(dat, ip(version = 6)),
+      macAddress = checker(dat, macAddress()),
+      browserUA = checker(dat, browserUA()),
+      phoneNr = checker(dat, phoneNr()),
+      latitudeLongitude = checker(dat, latitudeLongitude()),
+      gender = checker(dat, gender()),
+      ssn = checker(dat, ssn()),
+      birthday = checker(dat, birthday()),
+      bloodType = checker(dat, bloodType()),
+      iban = checker(dat, iban()),
+      creditcard = checker(dat, creditcard()),
+      mturk = checker(dat, mturk())
     )
   )
 }
