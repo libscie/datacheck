@@ -85,25 +85,12 @@ datacheckFile <- function(path) {
     stop(sprintf("File extension %s not supported", extension))
   }
 
+  out_df <- datacheckDf(dat)
+  out_df$file <- path
 
-  return(
-    data.frame(file = path,
-      email = checker(dat, email()),
-      ipv4 = checker(dat, ip(version = 4)),
-      ipv6 = checker(dat, ip(version = 6)),
-      macAddress = checker(dat, macAddress()),
-      browserUA = checker(dat, browserUA()),
-      phoneNr = checker(dat, phoneNr()),
-      latitudeLongitude = checker(dat, latitudeLongitude()),
-      gender = checker(dat, gender()),
-      ssn = checker(dat, ssn()),
-      birthday = checker(dat, birthday()),
-      bloodType = checker(dat, bloodType()),
-      iban = checker(dat, iban()),
-      creditcard = checker(dat, creditcard()),
-      mturk = checker(dat, mturk())
-    )
-  )
+  # Bring the file path in front and output
+  out_df[union("file", names(out_df))]
+
 }
 
 
