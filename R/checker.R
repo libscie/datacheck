@@ -30,6 +30,36 @@ checker <- function (df, regex) {
                           pattern = regex))) > 1)
 }
 
+#' Check a data frame for identifying information.
+#'
+#' @param df  Data frame.
+#'
+#' @return Data frame, with columns for each type of identifier (Boolean).
+#' @export
+#'
+#' @examples
+#' datacheckDf(cars)
+#'
+
+datacheckDf <- function(df){
+  data.frame(email = checker(df, email()),
+             ipv4 = checker(df, ip(version = 4)),
+             ipv6 = checker(df, ip(version = 6)),
+             macAddress = checker(df, macAddress()),
+             browserUA = checker(df, browserUA()),
+             phoneNr = checker(df, phoneNr()),
+             latitudeLongitude = checker(df, latitudeLongitude()),
+             gender = checker(df, gender()),
+             ssn = checker(df, ssn()),
+             birthday = checker(df, birthday()),
+             bloodType = checker(df, bloodType()),
+             iban = checker(df, iban()),
+             creditcard = checker(df, creditcard()),
+             mturk = checker(df, mturk())
+  )
+}
+
+
 #' Check a data file for identifying information.
 #'
 #' @param path   System path (file only).

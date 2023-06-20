@@ -2,6 +2,7 @@
 
 export(checker)
 export(datacheck)
+export(datacheckDf)
 export(datacheckFile)
 export(datacheckFolder)
 importFrom(utils,read.csv)
