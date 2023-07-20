@@ -30,6 +30,36 @@ checker <- function (df, regex) {
                           pattern = regex))) > 1)
 }
 
+#' Check a data frame for identifying information.
+#'
+#' @param df  Data frame.
+#'
+#' @return Data frame, with columns for each type of identifier (Boolean).
+#' @export
+#'
+#' @examples
+#' datacheckDf(cars)
+#'
+
+datacheckDf <- function(df){
+  data.frame(email = checker(df, email()),
+             ipv4 = checker(df, ip(version = 4)),
+             ipv6 = checker(df, ip(version = 6)),
+             macAddress = checker(df, macAddress()),
+             browserUA = checker(df, browserUA()),
+             phoneNr = checker(df, phoneNr()),
+             latitudeLongitude = checker(df, latitudeLongitude()),
+             gender = checker(df, gender()),
+             ssn = checker(df, ssn()),
+             birthday = checker(df, birthday()),
+             bloodType = checker(df, bloodType()),
+             iban = checker(df, iban()),
+             creditcard = checker(df, creditcard()),
+             mturk = checker(df, mturk())
+  )
+}
+
+
 #' Check a data file for identifying information.
 #'
 #' @param path   System path (file only).
@@ -55,25 +85,12 @@ datacheckFile <- function(path) {
     stop(sprintf("File extension %s not supported", extension))
   }
 
+  out_df <- datacheckDf(dat)
+  out_df$file <- path
 
-  return(
-    data.frame(file = path,
-      email = checker(dat, email()),
-      ipv4 = checker(dat, ip(version = 4)),
-      ipv6 = checker(dat, ip(version = 6)),
-      macAddress = checker(dat, macAddress()),
-      browserUA = checker(dat, browserUA()),
-      phoneNr = checker(dat, phoneNr()),
-      latitudeLongitude = checker(dat, latitudeLongitude()),
-      gender = checker(dat, gender()),
-      ssn = checker(dat, ssn()),
-      birthday = checker(dat, birthday()),
-      bloodType = checker(dat, bloodType()),
-      iban = checker(dat, iban()),
-      creditcard = checker(dat, creditcard()),
-      mturk = checker(dat, mturk())
-    )
-  )
+  # Bring the file path in front and output
+  out_df[union("file", names(out_df))]
+
 }
 
 
